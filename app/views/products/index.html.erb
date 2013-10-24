@@ -1,0 +1,45 @@
+
+<h1>Listing products</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Stock quantity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.title %></td>
+    <td><%= product.description %></td>
+    <td><%= product.price %></td>
+    <td><%= product.stock_quantity %></td>
+    <td><%= link_to 'Show', product %></td>
+    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<table>
+  <tr>
+    <th>Average Price</th>
+    <th>Maximum Price</th>
+    <th>Total Number</th>
+    <th>Quantity of Sotck</th>
+  </tr>
+</table>
+<br />
+
+<%= link_to 'New Product', new_product_path %>
+<p>
+  <% 100.times do %>
+    Chunky Bacon <br>
+  <% end %>
+</p>
